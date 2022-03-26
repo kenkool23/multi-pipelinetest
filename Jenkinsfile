@@ -14,7 +14,15 @@ pipeline {
         }
         stage('Second Stage') {
             steps {
-                sh 'echo this is the second stage'
+                sh 'echo this is the second stage Dev'
+            }
+        }
+        stage('Third Stage') {
+            when {
+        branch "develop"
+      }
+            steps {
+                sh 'echo this is the Third stage Dev'
             }
         }
       }
